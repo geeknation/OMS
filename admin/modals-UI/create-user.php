@@ -24,10 +24,15 @@
 		<label for="">ID Number</label>
 		<input type="text" class="form-control" id="id_number" name="id_number">
 	</div>
+	
 	<div class="form-group">
+		<label for="">Residence</label>
+		<input type="text" class="form-control" id="residence" name="residence">
+	</div>
+	<!-- <div class="form-group">
 		<label for="">Passport Photo</label>
 		<input type="file" class="form-control" id="employee_photo" name="employee_photo">
-	</div>
+	</div> -->
 	<div class="form-group">
 		<label for="">Role</label>
 		<select class="form-control" id="employee_role" name="employee_role">

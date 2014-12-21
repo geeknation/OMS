@@ -1,3 +1,9 @@
+<?php
+require_once "entel_ltd/EntelAuth.php";
+$auth=new EntelAuth("login.php","index.php");
+$auth->checkSession();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,11 +45,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Start Bootstrap</a>
+                <!-- <a class="navbar-brand" href="#">Start Bootstrap</a> -->
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
+                <!-- <ul class="nav navbar-nav">
                     <li>
                         <a href="#">About</a>
                     </li>
@@ -53,7 +59,7 @@
                     <li>
                         <a href="#">Contact</a>
                     </li>
-                </ul>
+                </ul> -->
             </div>
             <!-- /.navbar-collapse -->
         </div>
@@ -66,11 +72,11 @@
         <div class="row">
 
             <div class="col-md-3">
-                <p class="lead">Shop Name</p>
+                <p class="lead">OMS</p>
                 <div class="list-group">
-                    <a href="#" class="list-group-item active">My Orders</a>
-                    <a href="#" class="list-group-item">Products</a>
-                    <a href="#" class="list-group-item"></a>
+                    <a href="myorders.php" class="list-group-item active">My Orders</a>
+                    <a href="orders.php" class="list-group-item">Products</a>
+                    <!-- <a href="#" class="list-group-item"></a> -->
                 </div>
             </div>
 

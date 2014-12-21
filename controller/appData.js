@@ -1,5 +1,7 @@
 jQuery(document).ready(function(){
-	
+	$("#login-button").click(function(){
+		login($("#username").val(),$("#password").val());
+	});
 });
 $("#action").click(function(){
 	
@@ -34,5 +36,23 @@ function addOrderItems(){
 			}
 		},"json");
 		
+	}
+}
+function login(username,password){
+	if(username=="" || password==""){
+		window.alert("Enter a username and password");
+	}else{
+		$.post("controller/app.php",{
+			req:"login",
+			username:username,
+			password:password
+		},function(data){
+			if(data.login=="success"){
+				location.href="index.php";
+			}else{
+				
+				$(".console-msg").addClass("alert alert-warning").text(data.message);
+			}		
+		},"json");
 	}
 }

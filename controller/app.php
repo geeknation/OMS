@@ -1,15 +1,22 @@
 <?php
 global $db;
+require_once "../entel_ltd/EntelAuth.php";
+$auth=new EntelAuth("login.php","index.php");
 
 if(isset($_GET['req'])){
 	if($_GET['req']=="get-order-items"){
 		getOrderItems();
 	}
-	
+	if($_GET['req']=="fetch-my-orders"){
+		fetchUserOderItems();
+	}
 }
 if(isset($_POST['req'])){
 	if($_POST['req']=="save-order-item"){
 		saveOrderItems();
+	}if($_POST['req']=="login"){
+		$auth->loginQuery="SELECT user_id,username,password FROM staff WHERE username='".$_POST['username']."' and password='".$_POST['password']."'";
+		$auth->login($_POST['username'], $_POST['password'],TRUE);
 	}
 }
 
@@ -38,7 +45,13 @@ function saveOrderItems(){
 		}
 	}
 }
-
+function fetchUserOderItems(){
+	$db= new PDO("mysql:host=localhost;dbname=oms", "root", "");
+	$stmt=$db->prepare("SELECT * FROM orders");
+	$stmt->execute();
+	echo json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
+	
+}
 
 function populate() {
 	

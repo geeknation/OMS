@@ -15,7 +15,7 @@ class EntelAuth extends EntelDB {
 	//constructor takes two parameters, Login fail Page url[$failRedir] and Login pass url[$loginpassRedir]
 	public function __construct($failRedir, $loginpassRedir) {
 		//instantiate a database.
-		$db = new EntelDB("test", "root", "");
+		$db = new EntelDB("OMS", "root", "");
 		$this -> conn = $db -> conn;
 		$this -> failLoginRedir = $failRedir;
 		$this -> loginpassRedir = $loginpassRedir;
@@ -49,7 +49,7 @@ class EntelAuth extends EntelDB {
 			$userID = '';
 			while ($rows = $stmt -> fetch()) {
 				$userDB = $rows['username'];
-				$userID = $rows['userId'];
+				$userID = $rows['user_id'];
 			}
 			//set sessions
 			$_SESSION['user_allow'] = TRUE;

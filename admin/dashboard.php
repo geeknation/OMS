@@ -93,7 +93,7 @@
 					</li>
 					
 					<li role="presentation">
-						<a href="#" id="users">Users</a>
+						<a href="users.php" id="users">Users</a>
 					</li>
 					<li role="presentation">
 						<a href="#" id="customers">Customers</a>
@@ -129,4 +129,3 @@
 	<script type="text/javascript" src="app-UI.js"></script>
 	<script type="text/javascript" src="app-Data.js"></script>
 </html>
-
